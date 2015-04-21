@@ -60,15 +60,7 @@ var app = {
         
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
-        scanner.scan( function (result) { 
-
-	       // alert("We got a barcode\n" + 
-           // "Result: " + result.text + "\n" + 
-           // "Format: " + result.format + "\n" + 
-            //"Cancelled: " + result.cancelled); 
-            
-  var barcode = result.text;
-  
+ 
 	$.jsonp({
 		url: 'https://checkin.tmpay.nl/request.php',
 		callbackParameter: 'callback',
@@ -81,6 +73,16 @@ var app = {
 			alert('error!');  
 		}
 	});
+
+        scanner.scan( function (result) { 
+
+	       // alert("We got a barcode\n" + 
+           // "Result: " + result.text + "\n" + 
+           // "Format: " + result.format + "\n" + 
+            //"Cancelled: " + result.cancelled); 
+            
+ var barcode = result.text;
+  
 	
 	          
  $.ajax({
