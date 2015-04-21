@@ -58,12 +58,12 @@ var app = {
 
         scanner.scan( function (result) { 
 
-
+ alert('test');   
             
             var barcode = result.text;
             
 			$.ajax({
-			    type       : "POST",
+			    type       : "GET",
 			    url        : "https://checkin.tmpay.nl/request.php",
 			    crossDomain: true,
 			    beforeSend : function() {$.mobile.loading('show')},
