@@ -26,6 +26,9 @@
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
     <preference name="webviewbounce"    value="false" />
+    
+    <access origin="https://tmpay.nl" subdomains="true" />
+    <access origin="http://tmpay.nl" subdomains="true" />
 
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
