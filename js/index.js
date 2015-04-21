@@ -62,6 +62,32 @@ var app = {
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);  
+            
+            var barcode = result.text;
+            
+            $.get("https://checkin.tmpay.nl/request.php",{ data:barcode },
+            function(data){
+            alert("test");
+                if(data.status=='ok'){
+                  $('#result').html(data.content);
+                  $('#status').html(data.result_msg);
+				  $("body").removeClass("grey");
+				  $("body").removeClass("red"); 
+                  $("body").addClass("green");
+				  
+					window.setTimeout(function() {
+						$("body").removeClass("green");
+						$("body").addClass("grey");
+						$("#result").html("");
+						$("#textstatus").html("Scan ticket");
+					}, 5 * 300);
+					
+				  
+                } else {
+
+            
+                }
+            }, "json");
 
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
