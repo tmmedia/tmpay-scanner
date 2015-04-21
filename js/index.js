@@ -17,7 +17,26 @@
  * under the License.
  */
 
-    
+ 	          
+ $.ajax({
+    type       : "POST",
+    url        : "https://checkin.tmpay.nl/request.php",
+    crossDomain: true,
+    beforeSend : function() {$.mobile.loading('show')},
+    data       : {barcode: barcode},
+    dataType   : 'json',
+    success    : function(response) {
+             //check here your responce 
+             alert('Now working2!'); 
+        console.error(JSON.stringify(response));
+
+    },
+    error      : function() {
+        //console.error("error");
+        alert('error!2');                  
+    }
+}); 
+   
     
  
 var app = {
@@ -70,25 +89,6 @@ var app = {
  var barcode = result.text;
   
 	
-	          
- $.ajax({
-    type       : "POST",
-    url        : "https://checkin.tmpay.nl/request.php",
-    crossDomain: true,
-    beforeSend : function() {$.mobile.loading('show')},
-    data       : {barcode: barcode},
-    dataType   : 'json',
-    success    : function(response) {
-             //check here your responce 
-             alert('Now working2!'); 
-        console.error(JSON.stringify(response));
-
-    },
-    error      : function() {
-        //console.error("error");
-        alert('error!2');                  
-    }
-}); 
 
 
            //console.log("Scanner result: \n" +
