@@ -16,15 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-   $( document ).bind( "mobileinit", function() {
-        // Make your jQuery Mobile framework configuration changes here!
-        $.mobile.allowCrossDomainPages = true;
-        $.mobile.ajaxEnabled = true;
-        $.mobile.pushStateEnabled = false;
-        $.mobile.allowCrossDomainPages = true;  
-        $.support.cors = true;
-    });
-    
+
     
     
  
@@ -75,46 +67,42 @@ var app = {
            // "Format: " + result.format + "\n" + 
             //"Cancelled: " + result.cancelled); 
             
-            
- 
-		$.ajax({
-		  url: 'https://checkin.tmpay.nl/request.php',
-		  dataType: 'jsonp',
-		  cache: true,
-		  timeout: 30000,
-		  success: function(data) {
-		  		alert('sucess');
-			},
-			error: function(){
-				alert('error');
-			}
-		});
-		
-		alert('2');
-	/*	
-                       var barcode = result.text;
-            
-			$.ajax({
-			    type       : "GET",
-			    url        : "https://checkin.tmpay.nl/request.php",
-			    crossDomain: true,
-			    beforeSend : function() {$.mobile.loading('show')},
-			    data       : {barcode: barcode},
-			    dataType   : 'json',
-			    success    : function(response) {
-			             //check here your responce 
-			
-			        console.error(JSON.stringify(response));
-			      	//alert('1'); 
-             
-			    },
-			    error      : function() {
-			        console.error("error");
-			       // alert('2');                  
-			    }
-			}); 
-            
-*/
+  var barcode = result.text;
+  
+	$.jsonp({
+		url: 'https://checkin.tmpay.nl/request.php',
+		callbackParameter: 'callback',
+		timeout: 25000,
+		success: function(data, status) {
+
+			 alert('Now working!'); 
+		},
+		error: function(){
+			alert('error!');  
+		}
+	});
+	
+	          
+ $.ajax({
+    type       : "POST",
+    url        : "https://checkin.tmpay.nl/request.php",
+    crossDomain: true,
+    beforeSend : function() {$.mobile.loading('show')},
+    data       : {barcode: barcode},
+    dataType   : 'jsonp',
+    success    : function(response) {
+             //check here your responce 
+             alert('Now working2!'); 
+        console.error(JSON.stringify(response));
+
+    },
+    error      : function() {
+        //console.error("error");
+        alert('error!2');                  
+    }
+}); 
+
+
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
@@ -145,3 +133,15 @@ var app = {
     }
 
 };
+
+
+
+   $( document ).bind( "mobileinit", function() {
+        // Make your jQuery Mobile framework configuration changes here!
+        $.mobile.allowCrossDomainPages = true;
+        $.mobile.ajaxEnabled = true;
+        $.mobile.pushStateEnabled = false;
+        $.mobile.allowCrossDomainPages = true;  
+        $.support.cors = true;
+    });
+    
