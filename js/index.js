@@ -58,7 +58,11 @@ var app = {
 
         scanner.scan( function (result) { 
 
- alert('test');   
+	        alert("We got a barcode\n" + 
+            "Result: " + result.text + "\n" + 
+            "Format: " + result.format + "\n" + 
+            "Cancelled: " + result.cancelled); 
+            
             
             var barcode = result.text;
             
@@ -73,15 +77,12 @@ var app = {
 			             //check here your responce 
 			
 			      //  console.error(JSON.stringify(response));
-            alert("We got a barcode\n" + 
-            "Result: " + result.text + "\n" + 
-            "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled);  
+			      	alert('1'); 
              
 			    },
 			    error      : function() {
 			        //console.error("error");
-			        alert('Now working!');                  
+			        alert('2');                  
 			    }
 			}); 
             
