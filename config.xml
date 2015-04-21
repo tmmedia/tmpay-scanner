@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.ryanw.barcodedemo"
-        version   = "2.0.6">
+        version   = "2.0.7">
     <name>TM-Pay Scanner</name>
 
     <description>
@@ -21,7 +21,7 @@
        <param name="key" value="willoughby"/>
     </feature>
 
-    <preference name="phonegap-version" value="3.6.3" />
+    <preference name="phonegap-version" value="3.7.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />

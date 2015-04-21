@@ -16,6 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+   $( document ).bind( "mobileinit", function() {
+        // Make your jQuery Mobile framework configuration changes here!
+        $.mobile.allowCrossDomainPages = true;
+        $.mobile.ajaxEnabled = true;
+        $.mobile.pushStateEnabled = false;
+        $.mobile.allowCrossDomainPages = true;  
+        $.support.cors = true;
+    });
+    
+    
+    
+ 
 var app = {
     // Application Constructor
     initialize: function() {
@@ -64,11 +76,10 @@ var app = {
             //"Cancelled: " + result.cancelled); 
             
             
-            var barcode = result.text;
-            
+ 
 		$.ajax({
 		  url: 'https://checkin.tmpay.nl/request.php',
-		  dataType: 'json',
+		  dataType: 'jsonp',
 		  cache: true,
 		  timeout: 30000,
 		  success: function(data) {
@@ -81,6 +92,7 @@ var app = {
 		
 		alert('2');
 	/*	
+                       var barcode = result.text;
             
 			$.ajax({
 			    type       : "GET",
