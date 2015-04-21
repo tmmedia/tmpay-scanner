@@ -72,13 +72,14 @@ var app = {
 		  cache: true,
 		  timeout: 30000,
 		  success: function(data) {
-		  		alert('sucess')
+		  		alert('sucess');
 			},
 			error: function(){
 				alert('error');
 			}
 		});
 		
+		alert('2');
 	/*	
             
 			$.ajax({
