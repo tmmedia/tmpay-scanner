@@ -60,20 +60,6 @@ var app = {
         
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
- 
-	$.jsonp({
-		url: 'https://checkin.tmpay.nl/request.php',
-		callbackParameter: 'callback',
-		timeout: 25000,
-		success: function(data, status) {
-
-			 alert('Now working!'); 
-		},
-		error: function(){
-			alert('error!');  
-		}
-	});
-
         scanner.scan( function (result) { 
 
 	       // alert("We got a barcode\n" + 
@@ -86,12 +72,13 @@ var app = {
 	
 	          
  $.ajax({
+  alert('1');
     type       : "POST",
     url        : "https://checkin.tmpay.nl/request.php",
     crossDomain: true,
     beforeSend : function() {$.mobile.loading('show')},
     data       : {barcode: barcode},
-    dataType   : 'jsonp',
+    dataType   : 'json',
     success    : function(response) {
              //check here your responce 
              alert('Now working2!'); 
@@ -105,12 +92,12 @@ var app = {
 }); 
 
 
-           console.log("Scanner result: \n" +
-                "text: " + result.text + "\n" +
-                "format: " + result.format + "\n" +
-                "cancelled: " + result.cancelled + "\n");
-            document.getElementById("info").innerHTML = result.text;
-            console.log(result);
+           //console.log("Scanner result: \n" +
+           //     "text: " + result.text + "\n" +
+           //     "format: " + result.format + "\n" +
+            //    "cancelled: " + result.cancelled + "\n");
+            //document.getElementById("info").innerHTML = result.text;
+           // console.log(result);
             /*
             if (args.format == "QR_CODE") {
                 window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
