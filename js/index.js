@@ -58,10 +58,10 @@ var app = {
 
         scanner.scan( function (result) { 
 
-	        alert("We got a barcode\n" + 
-            "Result: " + result.text + "\n" + 
-            "Format: " + result.format + "\n" + 
-            "Cancelled: " + result.cancelled); 
+	       // alert("We got a barcode\n" + 
+           // "Result: " + result.text + "\n" + 
+           // "Format: " + result.format + "\n" + 
+            //"Cancelled: " + result.cancelled); 
             
             
             var barcode = result.text;
@@ -76,13 +76,13 @@ var app = {
 			    success    : function(response) {
 			             //check here your responce 
 			
-			      //  console.error(JSON.stringify(response));
-			      	alert('1'); 
+			        console.error(JSON.stringify(response));
+			      	//alert('1'); 
              
 			    },
 			    error      : function() {
-			        //console.error("error");
-			        alert('2');                  
+			        console.error("error");
+			       // alert('2');                  
 			    }
 			}); 
             
