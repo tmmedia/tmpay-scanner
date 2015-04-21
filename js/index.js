@@ -72,7 +72,6 @@ var app = {
 	
 	          
  $.ajax({
-  alert('1');
     type       : "POST",
     url        : "https://checkin.tmpay.nl/request.php",
     crossDomain: true,
