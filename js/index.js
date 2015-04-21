@@ -66,6 +66,21 @@ var app = {
             
             var barcode = result.text;
             
+		$.ajax({
+		  url: 'https://checkin.tmpay.nl/request.php',
+		  dataType: 'json',
+		  cache: true,
+		  timeout: 30000,
+		  success: function(data) {
+		  		alert('sucess')
+			},
+			error: function(){
+				alert('error');
+			}
+		});
+		
+	/*	
+            
 			$.ajax({
 			    type       : "GET",
 			    url        : "https://checkin.tmpay.nl/request.php",
@@ -86,7 +101,7 @@ var app = {
 			    }
 			}); 
             
-
+*/
            console.log("Scanner result: \n" +
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
