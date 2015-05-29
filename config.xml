@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.ryanw.barcodedemo"
-        version   = "2.0.9.3">
+        version   = "2.0.9.4">
     <name>TM-Pay Scanner</name>
 
     <description>
@@ -21,12 +21,17 @@
        <param name="key" value="willoughby"/>
     </feature>
 
-    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="phonegap-version" value="2.9.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
-    <preference name="webviewbounce"    value="false" />
-    
+    <preference name="show-splash-screen-spinner" value="true" />
+	<preference name="stay-in-webview" value="true" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<preference name="exit-on-suspend" value="true" />
+	 
+    <access origin="http://*" />
+    <access origin="https://*" />
     <access origin="https://tmpay.nl" subdomains="true" />
     <access origin="http://tmpay.nl" subdomains="true" />
 

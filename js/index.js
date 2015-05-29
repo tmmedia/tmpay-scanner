@@ -18,24 +18,7 @@
  */
 
  	          
- $.ajax({
-    type       : "POST",
-    url        : "https://checkin.tmpay.nl/request.php",
-    crossDomain: true,
-    beforeSend : function() {$.mobile.loading('show')},
-    data       : {barcode: barcode},
-    dataType   : 'json',
-    success    : function(response) {
-             //check here your responce 
-             alert('Now working2!'); 
-        console.error(JSON.stringify(response));
 
-    },
-    error      : function() {
-        //console.error("error");
-        alert('error!2');                  
-    }
-}); 
    
     
  
@@ -88,9 +71,24 @@ var app = {
             
  var barcode = result.text;
   
-	
+alert('1');	
 
+ $.ajax({
+    type       : "POST",
+    url        : "https://checkin.tmpay.nl/request.php",
+    crossDomain: true,
+    data       : {barcode: barcode},
+    dataType   : 'json',
+    success    : function(response) {
+             //check here your responce 
+             alert('Now working2!'); 
 
+    },
+    error      : function() {
+        //console.error("error");
+        alert('error!2');                  
+    }
+}); 
            //console.log("Scanner result: \n" +
            //     "text: " + result.text + "\n" +
            //     "format: " + result.format + "\n" +
@@ -105,6 +103,7 @@ var app = {
 
         }, function (error) { 
             console.log("Scanning failed: ", error); 
+            alert('FAIL');
         } );
     },
 
