@@ -71,7 +71,19 @@ var app = {
             
  var barcode = result.text;
   
-alert('1');	
+	
+	$.jsonp({
+		url: 'https://checkin.tmpay.nl/request.php',
+		callbackParameter: 'callback',
+		timeout: 25000,
+		success: function(data, status) {
+			alert('1');
+		},
+		error: function(){
+			alert('2');
+		}
+	});
+
 
  $.ajax({
     type       : "POST",
