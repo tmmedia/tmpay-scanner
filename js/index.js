@@ -71,19 +71,6 @@ var app = {
             
  var barcode = result.text;
   
-	
-	$.jsonp({
-		url: 'https://checkin.tmpay.nl/request.php',
-		callbackParameter: 'callback',
-		timeout: 25000,
-		success: function(data, status) {
-			alert('1');
-		},
-		error: function(){
-			alert('2');
-		}
-	});
-
 
  $.ajax({
     type       : "POST",
@@ -93,7 +80,42 @@ var app = {
     dataType   : 'json',
     success    : function(response) {
              //check here your responce 
-             alert('Now working2!'); 
+                if(data.status=='ok'){
+                  $('#result').html(data.content);
+                  $('#status').html(data.result_msg);
+				  $("body").removeClass("grey");
+				  $("body").removeClass("red"); 
+                  $("body").addClass("green");
+				  
+					window.setTimeout(function() {
+						$("body").removeClass("green");
+						$("body").addClass("grey");
+						$("#result").html("");
+					}, 5 * 300);
+					
+		            $("#barcode").val('');
+		            $('#barcode').attr('value') = ''; 
+		            $("#barcode").focus();
+				  
+                } else {
+                  /* $('#result').html(data.message); */
+                  $('#status').html(data.error_msg);
+				  $("body").removeClass("grey");
+				  $("body").removeClass("green"); 
+                  $("body").addClass("red");
+				  
+					window.setTimeout(function() {
+						$("body").removeClass("red");
+						$("body").addClass("grey");
+						$("#result").html("");
+					}, 5 * 300);
+					
+            
+		            $("#barcode").val('');
+		            $('#barcode').attr('value') = ''; 
+		            $("#barcode").focus();
+            
+                }
 
     },
     error      : function() {
