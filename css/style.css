@@ -35,6 +35,11 @@ h1 {
 
 .green {
 	background-color: #4dff49;
+	color: #fff;
+}
+
+.green h1 {
+	color: #fff;
 }
 
 .green input[type="text"] {
@@ -47,6 +52,11 @@ h1 {
 
 .red {
 	background-color: #ff4949;
+	color: #fff;
+}
+
+.red h1 {
+	color: #fff;
 }
 
 .red input[type="text"] {

@@ -80,7 +80,6 @@ var app = {
     dataType   : 'json',
     success    : function(data) {
              //check here your responce 
-             alert('1');
                 if(data.status=='ok'){
                 	alert('ok');
                   $('#result').html(data.content);
@@ -92,7 +91,7 @@ var app = {
 					window.setTimeout(function() {
 						$("body").removeClass("green");
 						$("body").addClass("grey");
-						$("#result").html("");
+						$("#status").html("<a href='#' class='topcoat-button' id='scan'>SCANNEN</a>");
 					}, 5 * 300);
 					
 		            $("#barcode").val('');
@@ -100,7 +99,6 @@ var app = {
 		            $("#barcode").focus();
 				  
                 } else {
-                	alert('2');
                   /* $('#result').html(data.message); */
                   $('#status').html(data.error_msg);
 				  $("body").removeClass("grey");
@@ -110,7 +108,7 @@ var app = {
 					window.setTimeout(function() {
 						$("body").removeClass("red");
 						$("body").addClass("grey");
-						$("#result").html("");
+						$("#status").html("<a href='#' class='topcoat-button' id='scan'>SCANNEN</a>");
 					}, 5 * 300);
 					
             
