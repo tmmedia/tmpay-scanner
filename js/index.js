@@ -81,6 +81,7 @@ var app = {
     success    : function(response) {
              //check here your responce 
                 if(data.status=='ok'){
+                	alert('ok');
                   $('#result').html(data.content);
                   $('#status').html(data.result_msg);
 				  $("body").removeClass("grey");
@@ -96,8 +97,10 @@ var app = {
 		            $("#barcode").val('');
 		            $('#barcode').attr('value') = ''; 
 		            $("#barcode").focus();
+		            alert('ok');
 				  
                 } else {
+                	alert('2');
                   /* $('#result').html(data.message); */
                   $('#status').html(data.error_msg);
 				  $("body").removeClass("grey");
