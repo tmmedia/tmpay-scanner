@@ -78,8 +78,9 @@ var app = {
     crossDomain: true,
     data       : {barcode: barcode},
     dataType   : 'json',
-    success    : function(response) {
+    success    : function(data) {
              //check here your responce 
+             alert('1');
                 if(data.status=='ok'){
                 	alert('ok');
                   $('#result').html(data.content);
@@ -97,7 +98,6 @@ var app = {
 		            $("#barcode").val('');
 		            $('#barcode').attr('value') = ''; 
 		            $("#barcode").focus();
-		            alert('ok');
 				  
                 } else {
                 	alert('2');
