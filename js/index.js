@@ -70,17 +70,10 @@ var app = {
             
  var barcode = result.text;
   
-
- $.ajax({
-    type       : "POST",
-    url        : "https://checkin.tmpay.nl/request.php",
-    crossDomain: true,
-    data       : {barcode: barcode},
-    dataType   : 'json',
-    success    : function(data) {
+$.get("https://checkin.tmpay.nl/request.php",{ data:barcode },
+function(data){
              //check here your responce 
                 if(data.status=='ok'){
-                	alert('ok');
                   $('#result').html(data.content);
                   $('#status').html(data.result_msg);
 				  $("body").removeClass("grey");
