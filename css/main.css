@@ -63,7 +63,7 @@ label.error { color: #A73939; font-size: 11px; display: block; width: 100%; whit
 
 /* ==========  Typo  ========== */
 
-h1, h1 a, h1 a:link { font-family: 'Cuprum', sans-serif; font-weight: normal; color: #242424; text-decoration: none;  }
+h1, h1 a, h1 a:link { font-family: 'Cuprum', sans-serif; font-weight: normal; color: #242424; text-decoration: none; line-height: 120px;  }
 
 
 h1, h2, h3, h4, h5, h6, ul.tabs li a, .leftNav ul li a, .stats ul li span, .userLink, .errorPage p, .ui-dialog .ui-dialog-title { font-family: 'Cuprum', sans-serif; font-weight: normal; }
