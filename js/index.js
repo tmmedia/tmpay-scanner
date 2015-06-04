@@ -69,9 +69,14 @@ var app = {
             //"Cancelled: " + result.cancelled); 
             
  var barcode = result.text;
-  
-$.get("https://checkin.tmpay.nl/request.php",{ data:barcode },
-function(data){
+         
+ $.ajax({
+    type       : "GET",
+    url        : "https://checkin.tmpay.nl/request.php",
+    crossDomain: true,
+    data       : {'date': barcode},
+    dataType   : 'json',
+    success    : function(data) {
              //check here your responce 
                 if(data.status=='ok'){
                   $('#result').html(data.content);
