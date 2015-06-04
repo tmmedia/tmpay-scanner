@@ -74,7 +74,7 @@ var app = {
     type       : "GET",
     url        : "https://checkin.tmpay.nl/request.php",
     crossDomain: true,
-    data       : {'date': barcode},
+    data       : {'data': barcode},
     dataType   : 'json',
     success    : function(data) {
              //check here your responce 
